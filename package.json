@@ -1,0 +1,16 @@
+{
+  "name": "yes",
+  "version": "0.0.1",
+  "description": "Realtime com VueJs e Firebase",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.1.4",
+    "vue": "^1.0.25"
+  }
+}
