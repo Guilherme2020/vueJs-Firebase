@@ -1,7 +1,32 @@
-    const chatComponent = new Vue.extend({
+
+    const chatComponent = {
 
         template: ` 
- 
+                   <style type="text/css" scoped>
+                        .chat{
+                            padding:0;
+                        
+                        }
+                        .chat li{
+                            margin-bottom:15px;
+                            padding-bottom:15px;
+                        
+                        }
+                        .chat li.left .chat-body{
+                            margin-left: 70px;
+                        }
+                        .chat li.right .chat-body{
+                            text-align: right;
+                            margin-right: 70px;
+                        }
+                        .panel-body{
+                            overflow-y: scroll;
+                            height: 400px;
+                        }
+                   </style> 
+                  
+                  
+                  
                    <div class="panel panel-primary">
                             <div class="panel-heading">Chat</div>
                             <div class="panel-body">
@@ -59,7 +84,7 @@
                                 photo:"http://placehold.it/50/FFFFFF/fff&text=EU"
                             }
                         ]
-                    },
+                    }
                 };
             },
             methods:{
@@ -69,14 +94,15 @@
 
                 }
             }
-    });
+    };
 
     Vue.component('my-chat', chatComponent);
     const chat = new Vue({
         el:"#chat",
 
 
-    })
+    });
+
 
 
 
