@@ -143,7 +143,7 @@
     const router = new VueRouter();
 
     router.map({
-       '/chat':{
+       '/chat/:room':{
            component: chatComponent
        },
        '/rooms':{
