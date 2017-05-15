@@ -93,18 +93,65 @@
                     return this.user.email === email;
 
                 }
+
             }
     };
+    const roomsComponent = {
+        template :
+            `
+            <div class="col-md-4" v-for="o in rooms">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        {{o.name}}
+                    </div>
+                    <div class="panel-body">
+                        {{o.description}}
+                        <br />
+                        <a href="javascript:void(0)" @click="goToChat(o)">Entrar</a>
+                    </div>
+                </div>
+            </div>
+        `,
+        data: function(){
+           return{
+               rooms:[
+                   {id:"001",name:"Php",description:"Entusiastas do PHP"},
+                   {id:"002",name:"Java",description:"Developers expert"},
+                   {id:"003",name:"C#",description:"Os caras do C#"},
+                   {id:"004",name:"C++",description:"Fissurados em Programação"},
+                   {id:"005",name:"Js",description:"Olha a web ai "},
+                   {id:"006",name:"Vue.Js",description:"Chat dos caras do data-binding"},
 
-    Vue.component('my-chat', chatComponent);
-    const chat = new Vue({
-        el:"#chat",
+               ]
+           };
+        },
+        methods:{
+            goToChat: function (room) {
+                this.$route.router.go('/chat/'+room.id);
+            },
+        },
+    };
+    const appComponent = {};
+    //Vue.component('my-chat', chatComponent);
+    // const chat = new Vue({
+    //     el:"#chat",
+    //
+    //
+    // });
 
 
+    const router = new VueRouter();
+
+    router.map({
+       '/chat':{
+           component: chatComponent,
+       },
+       'rooms':{
+           component: roomsComponent,
+       },
     });
 
-
-
+    router.start(appComponent,"#app");
 
 
 
