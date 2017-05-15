@@ -144,10 +144,10 @@
 
     router.map({
        '/chat':{
-           component: chatComponent,
+           component: chatComponent
        },
-       'rooms':{
-           component: roomsComponent,
+       '/rooms':{
+           component: roomsComponent
        },
     });
 
